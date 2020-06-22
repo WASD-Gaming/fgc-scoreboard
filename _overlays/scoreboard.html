@@ -7,22 +7,15 @@
 	</head>
 	<body>
 		<div id="scoreboardBG">
-			<!-- video source file set in scoreboard.js -->
-			<video id="scoreboardVid" class="scoreboard" type="video/webm" width="1920" height="114"></video>
 			<div id="roundBG" class="round-animation"></div>
 			<div id="leftBGWrapper" class="BGWrapper">
 				<div id="p1ScoreBG" class="scoreBG p1s-animation"></div>
-				<div id="p1PlayerBG" class="playerBG player-animation"></div>
+				<div id="p1PlayerBG" class="playerBG player1-animation"></div>
 			</div>
 			<div id="rightBGWrapper" class="BGWrapper">
 				<div id="p2ScoreBG" class="scoreBG p2s-animation"></div>
-				<div id="p2PlayerBG" class="playerBG player-animation"></div>
+				<div id="p2PlayerBG" class="playerBG player2-animation"></div>
 			</div>
-			<!--<img src="../imgs/p1Score.png" class="scoreboard"></img>
-			<img src="../imgs/p1Name.png" class="scoreboard"></img>
-			<img src="../imgs/p2Score.png" class="scoreboard"></img>
-			<img src="../imgs/p2Name.png" class="scoreboard"></img>
-			<img src="../imgs/round.png" class="scoreboard"></img>-->
 		</div>
 
 		<div id="scoreboard">
@@ -68,6 +61,7 @@
 			var scTime = .3; //amount of time in seconds that the load-in animation for scores takes
 			var scDelay = .45; //amount of time in seconds that the load-in animation for scores is delayed before starting
 			var logoTime = 200; //amount of time the fade-in animation for logos is delayed before starting
+			var adjust1 = '+32px'; //distance on y-axis that scoreboards move when adjusting for 2nd webm
 			var adjust2 = '-28px'; //distance on y-axis that scoreboards move when adjusting for 2nd webm
 			var adjust3 = '+28px'; //distance on y-axis that scoreboards move when adjusting for 3rd webm
 			var adjustLg = ['+890px','+30px',.8,'240px','140px']; //array of [distance to move logos on x-axis, "" on y-axis, scaling factor to shrink logos by, original logo width, original logo height]

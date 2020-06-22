@@ -28,7 +28,7 @@ body {
   height: 45px;
   line-height: 45px;
   text-align: center;
-  top: 30px;
+  top: 32px;
   font-size: 30px;
   opacity: 0;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .teams {
-  color: lightgray;
+  color: darkgray;
 }
 
 .scores {
@@ -51,7 +51,7 @@ body {
   height: 41px;
   line-height: 41px;
   text-align: center;
-  top: 32px;
+  top: 34px;
   -webkit-text-stroke: 1px black;
   font-size: 34px;
   opacity: 0;
@@ -91,21 +91,20 @@ body {
 }
 
 #roundBG {
-  background-color: blue;
-  outline: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.75);
+  outline: 1px solid #c40a18;
   width: 240px;
   height: 36px;
   position: absolute;
   top: 0;
   left: 840px;
   filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.6));
-  transform: perspective(90px) rotateX(-20deg);
+  transform: perspective(100px) rotateX(-18deg);
 }
 
 .round-animation {
   animation-name: slidedown;
   animation-duration: 0.26s;
-  animation-delay: 0.5s
 }
 
 .BGWrapper {
@@ -124,23 +123,17 @@ body {
 }
 
 .playerBG {
-  background-color: rgba(255, 0, 0, 0.8);
-  outline: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.75);
+  outline: 1px solid #c40a18;
   width: 375px;
   height: 100%;
   position: absolute;
   filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.6));
 }
 
-.player-animation {
-  animation-name: playerslidein;
-  animation-duration: 0.26s;
-  animation-delay: 0.5s
-}
-
 .scoreBG {
-  background-color: yellow;
-  outline: 1px solid white;
+  background-color: #c40a18;
+  outline: 1px solid black;
   width: 49px;
   height: calc(100% - 4px);
   position: absolute;
@@ -153,6 +146,11 @@ body {
   transform: skewX(20deg);
 }
 
+.player1-animation {
+  animation-name: player1slidein;
+  animation-duration: 0.26s;
+}
+
 #p1ScoreBG {
   transform: skewX(20deg);
 }
@@ -160,11 +158,15 @@ body {
 .p1s-animation {
   animation-name: p1score;
   animation-duration: 0.26s;
-  animation-delay: 0.5s
 }
 
 #p2PlayerBG {
   transform: skewX(-20deg);
+}
+
+.player2-animation {
+  animation-name: player2slidein;
+  animation-duration: 0.26s;
 }
 
 #p2ScoreBG {
@@ -173,29 +175,42 @@ body {
 }
 
 .p2s-animation {
-  animation-name: p1score;
+  animation-name: p2score;
   animation-duration: 0.26s;
-  animation-delay: 0.5s
 }
 
 /* Animation CSS */
 @keyframes slidedown {
   from {
     top: -40px;
+    opacity: 0;
   }
-
   to {
     top: 0px;
+    opacity: 1.0;
   }
 }
 
-@keyframes playerslidein {
+@keyframes player1slidein {
   from {
     width: 90px;
+    opacity: 0;
   }
-
   to {
     width: 375px;
+    opacity: 1.0;
+  }
+}
+
+@keyframes player2slidein {
+  from {
+    /* Using margins here isn't ideal but as the animation isn't playing that many times it should be alright. */
+    margin-right: 340px;
+    opacity: 0;
+  }
+  to {
+    margin-right: 55px;
+    opacity: 1.0;
   }
 }
 
@@ -204,7 +219,6 @@ body {
     left: 375px;
     opacity: 0;
   }
-
   to {
     left: 0px;
     opacity: 1.0;
@@ -216,7 +230,6 @@ body {
     left: 0px;
     opacity: 0;
   }
-
   to {
     left: 375px;
     opacity: 1.0;

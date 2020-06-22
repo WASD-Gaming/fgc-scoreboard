@@ -42,20 +42,26 @@ function init(){
 			$('#gameHold').html(game); //sets 'game' value into placeholder div
 
 			if(game == 'BBTAG' || game == 'SFVAE' || game == 'TEKKEN7' || game == 'UNIST'){
-				// $('#scoreboardVid').attr('src','../webm/scoreboard_1.webm');
+				// Shifts the scoreboard BG wrappers down to match HP bars
+				offset = document.getElementById("leftBGWrapper").offsetTop;
+				TweenMax.fromTo('#leftBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust1}})
+				TweenMax.fromTo('#rightBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust1}})
+				TweenMax.set('#leftWrapper',{css:{y: '4px'}});
+				TweenMax.set('#rightWrapper',{css:{y: '4px'}});
 			}
 			else if(game == 'BBCF' || game == 'DBFZ' || game == 'GGXRD' || game == 'KOFXIV' || game == 'MVCI' || game == 'UMVC3'){
-				// $('#scoreboardVid').attr('src','../webm/scoreboard_2.webm'); //changes webm to 2nd one if appropriate game is picked
-				TweenMax.set('#leftWrapper',{css:{y: adjust2}}); //sets scoreboard text wrappers to match placement of 2nd webm
+				// Shifts the scoreboard text wrappers up to match HP bars
+				TweenMax.set('#leftWrapper',{css:{y: adjust2}});
 				TweenMax.set('#rightWrapper',{css:{y: adjust2}});
 			}
 			else if(game == 'USF4'){
-				// $('#scoreboardVid').attr('src','../webm/scoreboard_3.webm');
+				offset = document.getElementById("leftBGWrapper").offsetTop;
+				TweenMax.fromTo('#leftBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust3}})
+				TweenMax.fromTo('#rightBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust3}})
 				TweenMax.set('#leftWrapper',{css:{y: adjust3}});
 				TweenMax.set('#rightWrapper',{css:{y: adjust3}});
 			}
 			else{
-				// $('#scoreboardVid').attr('src','../webm/scoreboard_2.webm');
 				TweenMax.set('#leftWrapper',{css:{y: adjust2}}); //if 'game' value is anything other than specified above it defaults to 2nd webm/placement
 				TweenMax.set('#rightWrapper',{css:{y: adjust2}});
 			}
@@ -65,12 +71,10 @@ function init(){
 				TweenMax.set('.logos',{css:{x: adjustLg[0], y: adjustLg[1], width: adjustLgW, height: adjustLgH}});
 			}
 
-			// document.getElementById('scoreboardVid').play(); //plays scoreboard video
-
 			getData(); //runs function that sets data polled from json into html objects
 			setTimeout(logoLoop,logoTime); //sets logoLoop function out in time specified in logoTime variable in scoreboard.html
 			startup = false; //flags that the scoreboard/getData functions have run their first pass
-			animated = true; //flags that the scoreboard video animation has run
+			animated = true; //flags that the scoreboard animation has run
 		}
 		else{
 			getData(); //if startup is not set to true, only the getData function is run each time scoreboard function runs
@@ -205,22 +209,23 @@ function init(){
 					$('#gameHold').html(game); //updates gameHold html object with new game dropdown value
 
 					if(game == 'BBTAG' || game == 'SFVAE' || game == 'TEKKEN7' || game == 'UNIST'){
-						// $('#scoreboardVid').attr('src','../webm/scoreboard_1.webm');
-						TweenMax.set('#leftWrapper',{css:{y: '+0px'}}); //same functions as above but this time also return wrappers to original positioning
-						TweenMax.set('#rightWrapper',{css:{y: '+0px'}});
+						offset = document.getElementById("leftBGWrapper").offsetTop;
+						TweenMax.fromTo('#leftBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust1}})
+						TweenMax.fromTo('#rightBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust1}})
+						TweenMax.set('#leftWrapper',{css:{y: '4px'}});
+						TweenMax.set('#rightWrapper',{css:{y: '4px'}});
 					}
 					else if(game == 'BBCF' || game == 'DBFZ' || game == 'GGXRD' || game == 'KOFXIV' || game == 'MVCI' || game == 'UMVC3'){
-						// $('#scoreboardVid').attr('src','../webm/scoreboard_2.webm');
+						TweenMax.set('#leftBGWrapper',{css:{y: '+0px'}});
+						TweenMax.set('#rightBGWrapper',{css:{y: '+0px'}});
 						TweenMax.set('#leftWrapper',{css:{y: adjust2}});
 						TweenMax.set('#rightWrapper',{css:{y: adjust2}});
 					}
 					else if(game == 'USF4'){
-						// $('#scoreboardVid').attr('src','../webm/scoreboard_3.webm');
 						TweenMax.set('#leftWrapper',{css:{y: adjust3}});
 						TweenMax.set('#rightWrapper',{css:{y: adjust3}});
 					}
 					else{
-						// $('#scoreboardVid').attr('src','../webm/scoreboard_2.webm');
 						TweenMax.set('#leftWrapper',{css:{y: adjust2}});
 						TweenMax.set('#rightWrapper',{css:{y: adjust2}});
 					}
@@ -233,18 +238,41 @@ function init(){
 						TweenMax.set('.logos',{css:{x: '+0px', y: '+0px', width: adjustLg[3], height: adjustLg[4]}}); //also return logos to original positioning and size
 					}
 
-					// document.getElementById('scoreboardVid').play(); //plays out scoreboard video to reload back to end status
-					roundBG = document.getElementById("roundBG");
-					roundBG.classList.remove("round-animation");
-					void roundBG.offsetWidth;
-					roundBG.classList.add("round-animation");
+					playCSSAnimations();
 
-					TweenMax.to('#scoreboardBG',.3,{css:{opacity: 1},delay:.5}); //fade background/text objects back in with enough delay for scoreboard to finish playing first
-					TweenMax.to('#scoreboard',.3,{css:{opacity: 1},delay:.5});
-					TweenMax.to('.logos',.3,{css:{opacity: .7},delay:.5}); //TweenMax to fade logos back in, note to fade them to same opacity as default in CSS
+					TweenMax.to('#scoreboardBG',.3,{css:{opacity: 1},delay:.3}); //fade background/text objects back in with enough delay for scoreboard to finish playing first
+					TweenMax.to('#scoreboard',.3,{css:{opacity: 1},delay:.3});
+					TweenMax.to('.logos',.3,{css:{opacity: .7},delay:.3}); //TweenMax to fade logos back in, note to fade them to same opacity as default in CSS
 				}});
 			}
 		}
+	}
+
+	function playCSSAnimations(){
+		roundBG = document.getElementById("roundBG");
+		roundBG.classList.remove("round-animation");
+		void roundBG.offsetWidth;
+		roundBG.classList.add("round-animation");
+
+		player1BG = document.getElementById("p1PlayerBG");
+		player1BG.classList.remove("player1-animation");
+		void player1BG.offsetWidth;
+		player1BG.classList.add("player1-animation");
+
+		score1BG = document.getElementById("p1ScoreBG");
+		score1BG.classList.remove("p1s-animation");
+		void score1BG.offsetWidth;
+		score1BG.classList.add("p1s-animation");
+
+		player2BG = document.getElementById("p2PlayerBG");
+		player2BG.classList.remove("player2-animation");
+		void player2BG.offsetWidth;
+		player2BG.classList.add("player2-animation");
+
+		score2BG = document.getElementById("p2ScoreBG");
+		score2BG.classList.remove("p2s-animation");
+		void score2BG.offsetWidth;
+		score2BG.classList.add("p2s-animation");
 	}
 
 	function logoLoop(){
