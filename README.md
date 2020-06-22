@@ -48,7 +48,6 @@ Also, thank you to [u/Brylark](https://www.reddit.com/r/VALORANT/comments/g0747t
 </p>
 
 ## Todo
-## Todo
 - [X] Add lower thirds for commentators
 - [X] Create GIFs to show case animations
 
