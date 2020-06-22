@@ -11,7 +11,7 @@ The scoreboard is built to work with StreamControl (included in the repo). All o
 * Score
 * Game
 
-To change any of the colors, the font, etc. just open the scss file and tweak the variables at the top. There's no need to jump into the rest of the styling unless you want to change something more drastic.
+To change any of the colors, the font, the opacity, etc. just open the scss file and tweak the variables at the top. There's no need to jump into the rest of the styling unless you want to change something more drastic.
 
 Finally, when you select a game (and hit save) the layout will adjust so that the scores and logos don't cover important guages.
 #### Supported Games
@@ -30,7 +30,7 @@ Finally, when you select a game (and hit save) the layout will adjust so that th
 ## Drop Me a Line
 If you found this at all useful, please let me know! You can drop me a line on twitter ([@tarikfayad](https://twitter.com/tarikfayad)), find me on Twitch ([ImpurestClub](https://www.twitch.tv/impurestclub/)), or ping me on my Discord server ([Link](https://discord.gg/ykj8tsN)).
 
-Also, feel free to check out a much bigger project I've been working on called [**WASD**](https://wasdgaming.gg). It's a search enginge for teammates/sparring partners along with a pretty comprehensive tournament calendar.
+Also, feel free to check out a much bigger project I've been working on called **WASD**. It's a search enginge for teammates/sparring partners along with a pretty comprehensive tournament calendar. You can find it here: https://wasdgaming.gg
 
 ## Thank Yous
 Massive thank you to TheSassageKing for making the initial [4 hour YouTube tutorial this is based on](https://www.youtube.com/watch?v=qqyFknxaVWo). The general look of the board and a good chunk of the code's skeleton comes from following that video.
