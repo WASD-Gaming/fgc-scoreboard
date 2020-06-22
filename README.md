@@ -27,12 +27,15 @@ Finally, when you select a game (and hit save) the layout will adjust so that th
 * UNICLR
 * USF4
 
-## Thank You
+## Drop Me a Line
+If you found this at all useful, please let me know! You can drop me a line on twitter ([@tarikfayad](https://twitter.com/tarikfayad)), find me on Twitch ([ImpurestClub](https://www.twitch.tv/impurestclub/)), or ping me on my Discord server ([Link](https://discord.gg/ykj8tsN)).
+
+Also, feel free to check out a much bigger project I've been working on called [**WASD**](https://wasdgaming.gg). It's a search enginge for teammates/sparring partners along with a pretty comprehensive tournament calendar.
+
+## Thank Yous
 Massive thank you to TheSassageKing for making the initial [4 hour YouTube tutorial this is based on](https://www.youtube.com/watch?v=qqyFknxaVWo). The general look of the board and a good chunk of the code's skeleton comes from following that video.
 
 Also, thank you to [u/Brylark](https://www.reddit.com/r/VALORANT/comments/g0747t/valorant_font/) over on Reddit for making the VALORANT font that I've included in the repo and plan to use myself for the time being.
-
-If you found this at all useful, please let me know! You can drop me a line on twitter ([@tarikfayad](https://twitter.com/tarikfayad)), find me on Twitch ([ImpurestClub](https://www.twitch.tv/impurestclub/)), or ping me on my Discord server ([Link](https://discord.gg/ykj8tsN)).
 
 ## Screenshots
 <p align="center">
