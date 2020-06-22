@@ -1,7 +1,8 @@
 # FGC Scoreboard
 FGC Scoreboard is an html and css scoreboard for fighting game tournament streams. It uses absolutely no images (except for tournament/company logos) and absolutely no webm files for animations.
 
-
+![FGC Scoreboard on DBFZ.](screenshots/dbfz.png)
+![FGC Scoreboard on UNICLR.](screenshots/uniclr.png)
 
 ## How FGC Scoreboard Works
 To get started with FGC Scoreboard just open your streaming platform of choice, add a **broswer source**, and then navigate to wherever you saved the **scoreboard.html** file.
