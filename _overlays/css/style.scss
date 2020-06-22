@@ -1,0 +1,91 @@
+@font-face {
+  src: url('fonts/ValorantFont.ttf');
+  font-family: "Valorant";
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: transparent;
+  padding: 0px;
+  margin: 0px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 3px DimGray;
+  font-family: "Valorant";
+
+  .scoreboard {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    .wrappers {
+      position: absolute;
+      width: 348px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      top: 30px;
+      font-size: 30px;
+      opacity: 0;
+
+      .teams {
+        color: lightgray;
+      }
+    }
+
+    #p1Wrapper {
+      left: 456px;
+    }
+
+    #p2Wrapper {
+      left: 1116px;
+    }
+
+    .scores {
+      position: absolute;
+      width: 41px;
+      height: 41px;
+      line-height: 41px;
+      text-align: center;
+      top: 32px;
+      -webkit-text-stroke: 1px black;
+      font-size: 34px;
+      opacity: 0;
+    }
+
+    #p1Score {
+      left: 402px;
+    }
+
+    #p2Score {
+      left: 1477px;
+    }
+
+    #round {
+      position: absolute;
+      width: 210px;
+      height: 36px;
+      left: 856px;
+      line-height: 36px;
+      text-align: center;
+      font-size: 22px;
+      opacity: 0;
+    }
+  }
+
+  .logos {
+    width: 240px;
+    height: 140px;
+    position: absolute;
+    left: 840px;
+    top: 930px;
+    opacity: .7;
+    display: none;
+  }
+
+  #gameHold {
+    display: none;
+  }
+}

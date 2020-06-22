@@ -1,0 +1,8 @@
+<!DOCTYPE StreamControl>
+<settings>
+ <altHotkeyHandling></altHotkeyHandling>
+ <format>2</format>
+ <layoutPath>layout.xml</layoutPath>
+ <outputPath></outputPath>
+ <useCDATA>0</useCDATA>
+</settings>

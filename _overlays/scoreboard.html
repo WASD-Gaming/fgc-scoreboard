@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/scoreboard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/greensock-js/src/minified/TweenMax.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="scoreboardBG">
+			<!-- video source file set in scoreboard.js -->
+			<video id="scoreboardVid" class="scoreboard" type="video/webm" width="1920" height="114"></video>
+			<div id="roundBG" class="round-animation"></div>
+			<div id="leftBGWrapper" class="BGWrapper">
+				<div id="p1ScoreBG" class="scoreBG p1s-animation"></div>
+				<div id="p1PlayerBG" class="playerBG player-animation"></div>
+			</div>
+			<div id="rightBGWrapper" class="BGWrapper">
+				<div id="p2ScoreBG" class="scoreBG p2s-animation"></div>
+				<div id="p2PlayerBG" class="playerBG player-animation"></div>
+			</div>
+			<!--<img src="../imgs/p1Score.png" class="scoreboard"></img>
+			<img src="../imgs/p1Name.png" class="scoreboard"></img>
+			<img src="../imgs/p2Score.png" class="scoreboard"></img>
+			<img src="../imgs/p2Name.png" class="scoreboard"></img>
+			<img src="../imgs/round.png" class="scoreboard"></img>-->
+		</div>
+
+		<div id="scoreboard">
+			<div id="leftWrapper">
+				<span id="p1Score" class="scores"></span>
+				<span id="p1Wrapper" class="wrappers">
+					<span id="p1Team" class="teams"></span> <!-- team/name spans nested within wrapper span to allow them to align the same without overlapping each other -->
+					<span id="p1Name" class="names"></span>
+				</span>
+			</div>
+			<div id="rightWrapper">
+				<span id="p2Score" class="scores"></span>
+				<span id="p2Wrapper" class="wrappers">
+					<span id="p2Team" class="teams"></span>
+					<span id="p2Name" class="names"></span>
+				</span>
+			</div>
+			<div id="rdWrapper">
+				<span id="round"></span>
+			</div>
+		</div>
+
+	<!--
+		<div id="logoWrapper">
+			<img id="logo1" class="logos" src="../imgs/logo1.png"></img>
+			<img id="logo2" class="logos" src="../imgs/logo2.png"></img>
+			<img id="logo3" class="logos" src="../imgs/logo3.png"></img>
+		</div>
+	-->
+
+		<div id="gameHold"></div> <!-- div to remain hidden to act as a placeholder for 'game' value -->
+
+		<script type="text/javascript">
+			var nameSize = '30px'; //default font size of name wrappers, should match 'font-size' value of .wrappers
+			var rdSize = '22px'; //default font size of round container, should match 'font-size' value of #round
+			var p1Move = '+90px'; //distance on x-axis that P1 name should initially be set to prior to load-in animation
+			var p2Move = '-90px'; //distance on x-axis that P2 name should initially be set to prior to load-in animation
+			var rdMove = '-40px'; //distance on y-axis that round should initially be set to prior to load-in animation
+			var nameTime = .3; //amount of time in seconds that the load-in animation for names takes
+			var nameDelay = .2; //amount of time in seconds that the load-in animation for names is delayed before starting
+			var rdTime = .3; //amount of time in seconds that the load-in animation for round info takes
+			var rdDelay = .2; //amount of time in seconds that the load-in animation for round info is delayed before starting
+			var scTime = .3; //amount of time in seconds that the load-in animation for scores takes
+			var scDelay = .45; //amount of time in seconds that the load-in animation for scores is delayed before starting
+			var logoTime = 200; //amount of time the fade-in animation for logos is delayed before starting
+			var adjust2 = '-28px'; //distance on y-axis that scoreboards move when adjusting for 2nd webm
+			var adjust3 = '+28px'; //distance on y-axis that scoreboards move when adjusting for 3rd webm
+			var adjustLg = ['+890px','+30px',.8,'240px','140px']; //array of [distance to move logos on x-axis, "" on y-axis, scaling factor to shrink logos by, original logo width, original logo height]
+		</script>
+	</body>
+
+</html>
