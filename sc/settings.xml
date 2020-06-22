@@ -1,6 +1,6 @@
 <!DOCTYPE StreamControl>
 <settings>
- <altHotkeyHandling></altHotkeyHandling>
+ <altHotkeyHandling>0</altHotkeyHandling>
  <format>2</format>
  <layoutPath>layout.xml</layoutPath>
  <outputPath></outputPath>

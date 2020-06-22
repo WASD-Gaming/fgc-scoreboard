@@ -41,7 +41,7 @@ function init(){
 			game = scObj['game'];
 			$('#gameHold').html(game); //sets 'game' value into placeholder div
 
-			if(game == 'BBTAG' || game == 'SFVAE' || game == 'TEKKEN7' || game == 'UNIST'){
+			if(game == 'BBTAG' || game == 'SFVCE' || game == 'TEKKEN7' || game == 'UNICLR'){
 				// Shifts the scoreboard BG wrappers down to match HP bars
 				offset = document.getElementById("leftBGWrapper").offsetTop;
 				TweenMax.fromTo('#leftBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust1}})
@@ -65,7 +65,7 @@ function init(){
 				TweenMax.set('#leftWrapper',{css:{y: adjust2}}); //if 'game' value is anything other than specified above it defaults to 2nd webm/placement
 				TweenMax.set('#rightWrapper',{css:{y: adjust2}});
 			}
-			if(game == 'BBTAG' || game == 'UNIST'){
+			if(game == 'BBTAG' || game == 'UNICLR'){
 				var adjustLgW = parseFloat($('.logos').css('width')) * adjustLg[2]; //shrinks logo sizes based on scaling variable set in scoreboard.html
 				var adjustLgH = parseFloat($('.logos').css('height')) * adjustLg[2];
 				TweenMax.set('.logos',{css:{x: adjustLg[0], y: adjustLg[1], width: adjustLgW, height: adjustLgH}});
@@ -208,7 +208,7 @@ function init(){
 				TweenMax.to('.logos',.3,{css:{opacity: 0},delay:0,onComplete:function(){ //then execute function
 					$('#gameHold').html(game); //updates gameHold html object with new game dropdown value
 
-					if(game == 'BBTAG' || game == 'SFVAE' || game == 'TEKKEN7' || game == 'UNIST'){
+					if(game == 'BBTAG' || game == 'SFVCE' || game == 'TEKKEN7' || game == 'UNICLR'){
 						offset = document.getElementById("leftBGWrapper").offsetTop;
 						TweenMax.fromTo('#leftBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust1}})
 						TweenMax.fromTo('#rightBGWrapper', 0.5, {css:{y: offset}}, {css:{y: adjust1}})
@@ -229,10 +229,11 @@ function init(){
 						TweenMax.set('#leftWrapper',{css:{y: adjust2}});
 						TweenMax.set('#rightWrapper',{css:{y: adjust2}});
 					}
-					if(game == 'BBTAG' || game == 'UNIST'){
+					if(game == 'BBTAG' || game == 'UNICLR'){
 						var adjustLgW = parseFloat(adjustLg[3]) * adjustLg[2]; //var changed so that it bases resized on original logo size rather than current value
 						var adjustLgH = parseFloat(adjustLg[4]) * adjustLg[2]; //uses variables stored in the 'adjustLg' array in scoreboard.html
 						TweenMax.set('.logos',{css:{x: adjustLg[0], y: adjustLg[1], width: adjustLgW, height: adjustLgH}});
+						TweenMax.set('.logos',{css:{x: adjustLg[0], y: adjustLg[1]}});
 					}
 					else{
 						TweenMax.set('.logos',{css:{x: '+0px', y: '+0px', width: adjustLg[3], height: adjustLg[4]}}); //also return logos to original positioning and size
