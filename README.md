@@ -36,6 +36,9 @@ If you found this at all useful, or have some suggestions, please let me know! Y
 
 Also, feel free to check out a much bigger project I've been working on called **WASD**. It's a search enginge for teammates/sparring partners along with a pretty comprehensive tournament calendar. You can find it here: https://wasdgaming.gg
 
+If you've really found this useful, feel free to <br>
+<a href="https://www.buymeacoffee.com/tarik" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 ## Thank Yous
 Massive thank you to TheSassageKing for making the initial [4 hour YouTube tutorial this is based on](https://www.youtube.com/watch?v=qqyFknxaVWo). The general look of the board and a good chunk of the code's skeleton comes from following that video.
 
